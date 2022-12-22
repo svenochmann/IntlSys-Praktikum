@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from machine import Pin
 from time import sleep
 
@@ -35,6 +34,3 @@ while True:
                     
         
         
-    
-=======
->>>>>>> 7d1ef8e2d6c125c4d2e5bfaa9fb79a6f236d7aa8
