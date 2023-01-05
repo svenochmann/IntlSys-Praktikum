@@ -49,27 +49,17 @@ seq =[[1,0,0,0],
       [0,0,1,0],
       [0,0,0,1]]
 
-"""Motor/Scan"""
+"""Main"""
 while True:   #Eine oder zwei ganze umdreumgen
     for step in seq:
         for i in range(len(pins)):
             pins[i].value(step[i])
             sleep(0.001)
-    dis =  disctance()              #maybe ein counter der nach einem Step disntace benutzt?              
-    result.append(dis)
+            if tick == 4 :
+                dis =  disctance()              #ounter der nach einer umdrehung disntace benutzt?                 
+                result.append(dis)
+    tick+=1     
+
         
-
-
-"""File"""
-file = open('test.csv','w+',newline='')
-with file:
-    header=['try','disctance']
-    writer=csv.writer(file, filename=header)
-    
-    writer.writeheader()
-    for i in result:
-        writer.writerow({'distance':i})
-    writer.writerow({'try': 'Done'})
-
-
-    
+for i in result:
+    #Add result into the csv doc.
